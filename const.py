@@ -1,0 +1,7 @@
+NETWORK = "network"
+
+MINER_REWARD = 1
+
+GENESIS_BLOCK_HASH = "0"
+
+GENESIS_BLOCK_NAME = "Genesis Block" 
