@@ -10,7 +10,9 @@ class User:
         
         self._name = name 
         
-        self._balance = 0
+        self._balance = 1
+        
+        self._role = "customer"
     
     def get_name(self):
         return self._name
@@ -20,6 +22,9 @@ class User:
 
     def get_balance(self):
         return self._balance
+    
+    def get_role(self):
+        return self._role
 
     def add_bitcoin(self, amt):
         self._balance += amt 
