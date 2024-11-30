@@ -8,7 +8,7 @@ from const import BITCOIN, ETHERNUM
 
 
 # Blockchain
-blockchain = Blockchain()
+blockchain = Blockchain(currency = BITCOIN, difficulty = 3)
 
 # servers
 s1 = Server("alice", blockchain)
@@ -19,7 +19,7 @@ c2 = Customer("alien")
 
 
 # Network 
-network = Network(servers = [s1, s2], users = [c1, c2], blockchain = blockchain, currency = ETHERNUM)
+network = Network(servers = [s1, s2], users = [c1, c2], blockchain = blockchain)
 
 c3 = Customer("lake")
 c4 = Customer("hannah")

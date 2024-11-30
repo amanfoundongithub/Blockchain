@@ -13,7 +13,7 @@ from tabulate import tabulate
 
 class Network:
     
-    def __init__(self, servers : list, users : list, blockchain : Blockchain, currency : str):
+    def __init__(self, servers : list, users : list, blockchain : Blockchain):
         
         self.__servers = servers
         self.__blockchain = blockchain
@@ -22,7 +22,9 @@ class Network:
             user.get_id() : user for user in users + servers 
         }
         
-        self.currency = currency
+        self.currency = blockchain.currency
+        
+        self.symbol = "BTC" if blockchain.currency == BITCOIN else "ETH"
     
     def add_user_to_network(self, user):
         self.__users[user.get_id()] = user    
@@ -32,7 +34,7 @@ class Network:
     
     def get_user_details(self):
         table = [
-            ["Name", "Balance (ETH)", "Role In Network"]
+            ["Name", f"Balance ({self.symbol})", "Role In Network"]
         ]
         
         for key in self.__users: 
