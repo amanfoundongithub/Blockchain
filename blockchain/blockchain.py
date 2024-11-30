@@ -4,12 +4,14 @@ from const import GENESIS_BLOCK_HASH, GENESIS_BLOCK_NAME, ETHERNUM, BITCOIN
 class Blockchain(object):
     
     def __init__(self,
-                 type : str = ETHERNUM,
+                 currency : str = ETHERNUM,
                  difficulty : int = None):
         
         self.__blockchain = [
             self.init_blockchain() 
         ]
+        
+        self.currency = currency
         
         self.difficulty = difficulty
         self.__pending_transaction = [] 
