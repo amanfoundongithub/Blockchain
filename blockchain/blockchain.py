@@ -1,12 +1,11 @@
 from .transactionBlock import TransactionBlock
-from const import GENESIS_BLOCK_HASH, GENESIS_BLOCK_NAME
-
-
+from const import GENESIS_BLOCK_HASH, GENESIS_BLOCK_NAME, ETHERNUM, BITCOIN
 
 class Blockchain(object):
     
     def __init__(self,
-                 difficulty : int):
+                 type : str = ETHERNUM,
+                 difficulty : int = None):
         
         self.__blockchain = [
             self.init_blockchain() 

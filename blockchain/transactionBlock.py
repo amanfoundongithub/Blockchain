@@ -25,13 +25,18 @@ class TransactionBlock(object):
         
         return hashlib.sha256(repstr.encode()).hexdigest() 
     
-    def mine(self, difficulty : int):
+    def mine_pow(self, difficulty : int):
         # We want at least these many 0s initially
         target = "0" * difficulty
         
         while not self.hash.startswith(target):
             self.nonce += 1
             self.hash = self.__generate_hash()
+        
+        
+    def mine_pos(self):
+        return 
+        
         
         
         
