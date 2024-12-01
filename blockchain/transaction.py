@@ -1,4 +1,5 @@
 from const import CREDIT, DEBIT
+import time 
 
 class Transaction(object):
     """ 
@@ -24,6 +25,8 @@ class Transaction(object):
         self.sender   = sender 
         
         self.amount = amount 
+        
+        self.timestamp = time.time()
     
     def get_transaction_type(self):
         """ 
@@ -36,5 +39,5 @@ class Transaction(object):
         
     
     def __repr__(self) -> str:
-        return f"[{self.sender} -> {self.reciever}, Amount : {self.amount}]"
+        return f"[{self.sender} -> {self.reciever}, Amount : {self.amount}, {self.timestamp}]"
 
