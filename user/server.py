@@ -20,6 +20,8 @@ class Server(User):
         self._role = "server"
     
     
+    
+    
     def solve_pow(self):
         try:
             # Get the pending transactions
@@ -43,16 +45,6 @@ class Server(User):
             print(e)
             return None
     
-    def verify_pow(self, transaction : TransactionBlock):
-        try: 
-            if transaction.hash.startswith("0" * self.__blockchain.difficulty) == False:
-                return False 
-            return True
-        except Exception as e:
-            print(e)
-            return None 
-    
-    
     def solve_pos(self):
         try:
             # Get the pending transactions
@@ -75,10 +67,3 @@ class Server(User):
         except Exception as e:
             print(e)
             return None
-        
-    def verify_pos(self, transaction : TransactionBlock):
-        try: 
-            return True
-        except Exception as e:
-            print(e)
-            return None   
